@@ -1,0 +1,2 @@
+export const ADD_RESULT_SEARCH = 'ADD_RESULT_SEARCH';
+export const ADD_CURRENT_USER = 'ADD_CURRENT_USER';
