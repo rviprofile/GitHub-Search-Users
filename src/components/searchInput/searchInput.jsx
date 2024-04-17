@@ -1,5 +1,5 @@
 import { SearchButton } from '../searchButton/searchButton';
-import * as S from './serachInput.styles';
+import * as S from './searchInput.styles';
 import { useState } from 'react';
 
 export const SearchInput = () => {
@@ -14,9 +14,7 @@ export const SearchInput = () => {
                 placeholder="Введите логин на GitHub"
                 onChange={(event) => setInputValue(event.target.value)}
             ></S.Input>
-            <SearchButton
-                login={inputValue}
-            ></SearchButton>
+            <SearchButton login={inputValue}></SearchButton>
         </S.SearchBox>
     );
 };

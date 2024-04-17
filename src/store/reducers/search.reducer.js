@@ -3,9 +3,9 @@ import {
     ADD_RESULT_SEARCH,
 } from './../actions/creators/types/search.types';
 
-const initilState = {};
+const initialState = {};
 
-export default function searchReducer(state = initilState, action) {
+export default function searchReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_CURRENT_USER: {
             return { ...state, currentUser: action.payload };

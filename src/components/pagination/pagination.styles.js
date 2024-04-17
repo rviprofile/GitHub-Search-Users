@@ -4,6 +4,7 @@ export const PaginationBlock = styled.div`
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin-bottom: 20px;
 `;
 
 export const PaginationItem = styled.div`
@@ -24,8 +25,8 @@ export const PaginationItem = styled.div`
 `;
 
 export const ActivePaginationItem = styled.div`
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
     border-radius: 20px;
     background-color: #c8d4e6;
     display: flex;

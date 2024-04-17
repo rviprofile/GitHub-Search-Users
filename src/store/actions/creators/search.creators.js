@@ -1,4 +1,8 @@
-import { ADD_CURRENT_USER, ADD_RESULT_SEARCH } from './types/search.types';
+import {
+    ADD_CURRENT_USER,
+    ADD_RESULT_SEARCH,
+    NEW_CURRENT_PAGE,
+} from './types/search.types';
 
 export const AddResultSearch = (content) => ({
     type: ADD_RESULT_SEARCH,
@@ -12,4 +16,9 @@ export const AddCurrentUser = (user) => ({
     payload: {
         user,
     },
+});
+
+export const NewCurrentPage = (number) => ({
+    type: NEW_CURRENT_PAGE,
+    payload: number,
 });
