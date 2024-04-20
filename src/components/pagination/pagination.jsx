@@ -13,16 +13,18 @@ export const Pagination = () => {
     const [allUsers, setAllUsers] = useState(0);
     // Состояние с номером активной страницы
     const [currentPage, setCurrentPage] = useState(1);
-
+    // Сколько пользователей показано на странице 
     let usersPerPage = 10;
-
     // Сколько страниц возможно получить
     let howManyPages = Math.ceil(allUsers / usersPerPage);
-
     // При обновлении store
     store.subscribe(() => {
         // Сохраняем количество всех найденых пользователей
-        setAllUsers(store.getState().search.resultSearch.content.total_count);
+        if (store.getState().search.resultSearch) {
+            setAllUsers(
+                store.getState().search.resultSearch.content.total_count
+            );
+        }
         // Сохраняем номер активной страницы
         setCurrentPage(store.getState().currentPage.currentPage);
     });
@@ -35,7 +37,7 @@ export const Pagination = () => {
                     key={'under'}
                     onClick={() => prevPage(currentPage)}
                 >
-                    Назад
+                    <S.MoveImg src="./prev.svg" />
                 </S.PaginationItem>
             ) : (
                 ''
@@ -68,7 +70,7 @@ export const Pagination = () => {
                     key={'next'}
                     onClick={() => nextPage(currentPage)}
                 >
-                    Вперед
+                    <S.MoveImg src="./next.svg" />
                 </S.PaginationItem>
             ) : (
                 ''

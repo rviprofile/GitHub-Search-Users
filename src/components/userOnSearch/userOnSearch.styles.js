@@ -37,4 +37,5 @@ export const PhotoAndLoginBox = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 15px;
+    cursor: pointer;
 `;

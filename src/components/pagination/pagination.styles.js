@@ -5,6 +5,7 @@ export const PaginationBlock = styled.div`
     flex-direction: row;
     gap: 10px;
     margin-bottom: 20px;
+    max-width: calc(120px + (100vw / 2));
 `;
 
 export const PaginationItem = styled.div`
@@ -35,4 +36,10 @@ export const ActivePaginationItem = styled.div`
     font-size: 20px;
     cursor: pointer;
     transition: all 500ms ease;
+`;
+
+export const MoveImg = styled.img`
+    height: 35px;
+    width: 35px;
+    opacity: 0.7;
 `;

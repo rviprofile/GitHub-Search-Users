@@ -8,7 +8,7 @@ export const ResultSearchingBlock = () => {
     const [payload, setPayload] = useState({ total_count: 0, items: [] });
 
     store.subscribe(() => {
-        if (store.getState().search.resultSearch.content) {
+        if (store.getState().search.resultSearch) {
             setPayload(store.getState().search.resultSearch.content);
         }
     });
