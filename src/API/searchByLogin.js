@@ -1,18 +1,27 @@
 import axios from 'axios';
 import { store } from '../store/store';
 import { AddResultSearch } from '../store/actions/creators/search.creators';
-import { clearConfigCache } from 'prettier';
 const PORT = 'https://api.github.com/search/users?q=';
 
 export default async function SearchByLogin(login) {
-    const URL = PORT + login.trim();
+    // Актуальная страница в поиске
+    const currentPage = store.getState().currentPage.currentPage;
+    // URL адрес для запроса
+    const URL = () => {
+        if (currentPage > 1) {
+            return PORT + login.trim() + `&page=${currentPage}`;
+        } else {
+            return PORT + login.trim();
+        }
+    };
+
     if (login.trim().length === 0) {
         console.log('Login value is empty');
         return;
     } else {
         try {
-            const res = await axios.get(URL);
-            console.log(`Request to ${URL}`);
+            console.log(`Request to ${URL()}`);
+            const res = await axios.get(URL());
             // Отправляем результат поиска в store
             store.dispatch(AddResultSearch(res.data));
         } catch (err) {

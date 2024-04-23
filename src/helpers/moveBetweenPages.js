@@ -13,5 +13,6 @@ export function prevPage(currentPage) {
 
 export function choosePage(n) {
     store.dispatch(NewCurrentPage(n));
+    
     window.scrollTo(0, 0);
 }

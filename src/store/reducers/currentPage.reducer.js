@@ -1,6 +1,6 @@
 import { NEW_CURRENT_PAGE } from '../actions/creators/types/search.types';
 
-const initialState = 1;
+const initialState = { currentPage: 1 };
 
 export default function currentPageReducer(state = initialState, action) {
     switch (action.type) {
