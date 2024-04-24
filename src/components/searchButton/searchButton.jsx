@@ -10,17 +10,17 @@ export const SearchButton = ({ login }) => {
         if (login) {
             // Обращение к API
             SearchByLogin(login);
-            // Страница поиска теперь 1
+            // Страница поиска в store теперь 1
             store.dispatch(NewCurrentPage(1));
         }
     }
-
+    // Состояние со страницей поиска
     const [currentPage, setCurrentPage] = useState(1);
-
+    // При каждом обновлении store, обновляем локальное состояние со страницей поиска
     store.subscribe(() => {
         setCurrentPage(store.getState().currentPage.currentPage);
     });
-
+    // Если значение со страницей поиска изменилось, обращаемся к API используя логин
     useEffect(() => {
         // Обращение к API
         SearchByLogin(login);

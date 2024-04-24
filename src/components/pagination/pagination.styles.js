@@ -18,10 +18,10 @@ export const PaginationItem = styled.div`
     align-items: center;
     font-size: 20px;
     cursor: pointer;
-    transition: all 500ms ease;
+    transition: all 100ms ease;
     &:hover {
         background-color: #c8d4e6;
-        transition: all 500ms ease;
+        transition: all 100ms ease;
     }
 `;
 

@@ -6,8 +6,9 @@ const PORT = 'https://api.github.com/search/users?q=';
 export default async function SearchByLogin(login) {
     // Актуальная страница в поиске
     const currentPage = store.getState().currentPage.currentPage;
-    // URL адрес для запроса
+    // URL для запроса
     const URL = () => {
+        // Если страница поиска больше 1, она прописана в URL
         if (currentPage > 1) {
             return PORT + login.trim() + `&page=${currentPage}`;
         } else {

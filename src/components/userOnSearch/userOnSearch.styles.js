@@ -14,11 +14,11 @@ export const UserContainer = styled.div`
     gap: 15px;
     justify-content: space-between;
     color: black;
-    transition: all 500ms ease;
+    transition: all 100ms ease;
     cursor: pointer;
     &:hover {
         background-color: #c8d4e6;
-        transition: all 500ms ease;
+        transition: all 100ms ease;
     }
 `;
 
