@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SearchByLogin from '../../API/searchByLogin';
-import { NewCurrentPage } from '../../store/actions/creators/search.creators';
+import { NewCurrentPage } from '../../store/actions/creators/creators';
 import { store } from '../../store/store';
 import * as S from './searchButton.styles';
 

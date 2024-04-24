@@ -14,7 +14,7 @@ export const Pagination = () => {
     // Состояние с номером активной страницы
     const [currentPage, setCurrentPage] = useState(1);
     // Сколько пользователей показано на странице 
-    let usersPerPage = 10;
+    let usersPerPage = 30;
     // Сколько страниц возможно получить
     let howManyPages = Math.ceil(allUsers / usersPerPage);
     // При обновлении store
@@ -53,7 +53,7 @@ export const Pagination = () => {
                     );
                     // Если кнопка дальше от активной на 6 или больше в любую сторону, она не показана
                 } else if (i - currentPage > 6 || currentPage - i > 6) {
-                    return;
+                    return '';
                     // В других случаях показана обычная кнопка страницы
                 } else {
                     return (

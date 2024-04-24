@@ -1,3 +1,5 @@
 export const ADD_RESULT_SEARCH = 'ADD_RESULT_SEARCH';
 export const ADD_CURRENT_USER = 'ADD_CURRENT_USER';
 export const NEW_CURRENT_PAGE = 'NEW_CURRENT_PAGE';
+export const IS_LOADING = 'IS_LOADING';
+export const IS_NOT_LOADING = 'IS_NOT_LOADING';

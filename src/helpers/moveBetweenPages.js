@@ -1,4 +1,4 @@
-import { NewCurrentPage } from '../store/actions/creators/search.creators';
+import { NewCurrentPage } from '../store/actions/creators/creators';
 import { store } from '../store/store';
 
 export function nextPage(currentPage) {
@@ -13,6 +13,6 @@ export function prevPage(currentPage) {
 
 export function choosePage(n) {
     store.dispatch(NewCurrentPage(n));
-    
+
     window.scrollTo(0, 0);
 }

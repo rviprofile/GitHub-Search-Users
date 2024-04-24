@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { store } from '../store/store';
-import { AddResultSearch } from '../store/actions/creators/search.creators';
+import {
+    AddResultSearch,
+    isLoadingCreator,
+    isNotLoadingCreator,
+} from '../store/actions/creators/creators';
 const PORT = 'https://api.github.com/search/users?q=';
 
 export default async function SearchByLogin(login) {
@@ -21,10 +25,14 @@ export default async function SearchByLogin(login) {
         return;
     } else {
         try {
+            // Статус загрузки - true
+            store.dispatch(isLoadingCreator());
             console.log(`Request to ${URL()}`);
             const res = await axios.get(URL());
             // Отправляем результат поиска в store
             store.dispatch(AddResultSearch(res.data));
+            // Статус загрузки - false
+            store.dispatch(isNotLoadingCreator());
         } catch (err) {
             console.log(err);
         }
