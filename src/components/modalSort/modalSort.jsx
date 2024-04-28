@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as S from './modalSort.styles';
 import { store } from '../../store/store';
-import { newSort } from '../../store/actions/creators/creators';
+import { NewCurrentPage, newSort } from '../../store/actions/creators/creators';
 
 export const ModalSort = () => {
     const [isActive, setIsActive] = useState(false);
@@ -9,6 +9,7 @@ export const ModalSort = () => {
 
     const hadleClickItem = (id) => {
         setIsActive(false);
+        store.dispatch(NewCurrentPage(1))
         switch (id) {
             case currentSort.id: {
                 setCurentSort({ title: 'Умолчанию', id: 0 });

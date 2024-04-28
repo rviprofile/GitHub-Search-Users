@@ -4,8 +4,7 @@ export const Block = styled.div`
     color: #667;
     width: calc(120px + (100vw / 2));
     display: ${(props) => (props.isLoading ? 'none' : 'flex')};
-    flex-direction: column;
-    
+    flex-direction: column;  
 `;
 
 export const Loader = styled.img`

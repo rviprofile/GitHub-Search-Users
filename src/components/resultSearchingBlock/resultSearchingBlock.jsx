@@ -3,6 +3,7 @@ import { store } from '../../store/store';
 import * as S from './resultSearchingBlock.styles';
 import { UserOnSearch } from '../userOnSearch/userOnSearch.jsx';
 import { SortButtonsBlock } from '../sortButtonBlock/sortButtonsBlock.jsx';
+import { CurrentUser } from '../currentUser/currentUser.jsx';
 
 export const ResultSearchingBlock = () => {
     // Состояние для рендера списка пользователей
@@ -18,8 +19,15 @@ export const ResultSearchingBlock = () => {
     });
 
     return (
-        <div>
+        <div
+            style={{
+                display: 'flex',
+                flex_direction: 'column',
+                align_items: 'center',
+            }}
+        >
             <S.Loader src="./loader.gif" alt="loader" isLoading={isLoading} />
+            <CurrentUser />
             <S.Block isLoading={isLoading}>
                 <SortButtonsBlock count={payload.total_count} />
                 {payload.items.map((item) => {

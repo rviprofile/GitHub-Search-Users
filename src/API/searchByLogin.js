@@ -27,7 +27,6 @@ export default async function SearchByLogin(login) {
         }
         return URL;
     };
-
     if (login.trim().length === 0) {
         console.log('Login value is empty');
         return;
@@ -36,6 +35,7 @@ export default async function SearchByLogin(login) {
             // Статус загрузки - true
             store.dispatch(isLoadingCreator());
             console.log(`Request to ${URL()}`);
+            // Обращаемся к API по URL
             const res = await axios.get(URL());
             // Отправляем результат поиска в store
             store.dispatch(AddResultSearch(res.data));

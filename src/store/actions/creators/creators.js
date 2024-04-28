@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
 import {
     ADD_CURRENT_USER,
     ADD_RESULT_SEARCH,
@@ -17,9 +16,7 @@ export const AddResultSearch = (content) => ({
 
 export const AddCurrentUser = (user) => ({
     type: ADD_CURRENT_USER,
-    payload: {
-        user,
-    },
+    payload: user,
 });
 
 export const NewCurrentPage = (number) => ({

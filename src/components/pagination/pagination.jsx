@@ -19,7 +19,7 @@ export const Pagination = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     // Сколько пользователей показано на странице
-    let usersPerPage = 30;
+    let usersPerPage = 10;
 
     // Сколько страниц возможно получить
     let howManyPages = Math.ceil(allUsers / usersPerPage);
