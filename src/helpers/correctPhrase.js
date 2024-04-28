@@ -1,3 +1,5 @@
+//  Функция возвращает результат поиска.
+//  Например "Найден 31 пользователь" или "Найдено 32 пользователя"
 export default function correctPhrase(number) {
     let lastDigit = String(number).substr(-1);
     let ending = () => {

@@ -1,9 +1,11 @@
+import { type } from '@testing-library/user-event/dist/type';
 import {
     ADD_CURRENT_USER,
     ADD_RESULT_SEARCH,
     NEW_CURRENT_PAGE,
     IS_LOADING,
     IS_NOT_LOADING,
+    NEW_SORT,
 } from './types/search.types';
 
 export const AddResultSearch = (content) => ({
@@ -27,10 +29,15 @@ export const NewCurrentPage = (number) => ({
 
 export const isLoadingCreator = () => ({
     type: IS_LOADING,
-    payload: true
+    payload: true,
 });
 
 export const isNotLoadingCreator = () => ({
     type: IS_NOT_LOADING,
-    payload: false
+    payload: false,
+});
+
+export const newSort = (sort) => ({
+    type: NEW_SORT,
+    payload: sort,
 });

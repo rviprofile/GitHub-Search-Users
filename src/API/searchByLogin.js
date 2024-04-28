@@ -9,15 +9,23 @@ const PORT = 'https://api.github.com/search/users?q=';
 
 export default async function SearchByLogin(login) {
     // Актуальная страница в поиске
-    const currentPage = store.getState().currentPage.currentPage;
+    const currentPage = store.getState().currentPageAndSort.currentPage;
+    // Сортировка
+    const currentSort = store.getState().currentPageAndSort.sort;
     // URL для запроса
     const URL = () => {
+        let URL = '';
         // Если страница поиска больше 1, она прописана в URL
         if (currentPage > 1) {
-            return PORT + login.trim() + `&page=${currentPage}`;
+            URL = PORT + login.trim() + `&page=${currentPage}`;
         } else {
-            return PORT + login.trim();
+            URL = PORT + login.trim();
         }
+        // Если есть сортировка, она проописана в URL
+        if (currentSort) {
+            URL = URL + '&sort=' + currentSort;
+        }
+        return URL;
     };
 
     if (login.trim().length === 0) {

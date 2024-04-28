@@ -16,15 +16,18 @@ export const SearchButton = ({ login }) => {
     }
     // Состояние со страницей поиска
     const [currentPage, setCurrentPage] = useState(1);
+    // Состояние с сортировкой
+    const [currentSort, setCurrentSort] = useState();
     // При каждом обновлении store, обновляем локальное состояние со страницей поиска
     store.subscribe(() => {
-        setCurrentPage(store.getState().currentPage.currentPage);
+        setCurrentPage(store.getState().currentPageAndSort.currentPage);
+        setCurrentSort(store.getState().currentPageAndSort.sort);
     });
     // Если значение со страницей поиска изменилось, обращаемся к API используя логин
     useEffect(() => {
         // Обращение к API
         SearchByLogin(login);
-    }, [currentPage]);
+    }, [currentPage, currentSort]);
 
     return (
         <S.SearchButton onClick={() => handleClickButton(login)}>

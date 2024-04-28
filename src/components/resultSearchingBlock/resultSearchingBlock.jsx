@@ -18,13 +18,7 @@ export const ResultSearchingBlock = () => {
     });
 
     if (isLoading) {
-        return (
-            <img
-                src="./loader.gif"
-                alt="loader"
-                className='loader'
-            />
-        );
+        return <img src="./loader.gif" alt="loader" className="loader" />;
     } else {
         return (
             <S.Block>
