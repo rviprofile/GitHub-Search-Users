@@ -23,7 +23,7 @@ export default async function SearchByLogin(login) {
         }
         // Если есть сортировка, она проописана в URL
         if (currentSort) {
-            URL = URL + '&sort=' + currentSort;
+            URL = URL + currentSort;
         }
         return URL;
     };

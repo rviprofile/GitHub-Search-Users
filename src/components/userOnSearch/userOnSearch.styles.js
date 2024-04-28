@@ -29,7 +29,7 @@ export const UserImg = styled.img`
 
 export const TypeOfUserImg = styled.img`
     width: 30px;
-    opacity: 0.5;
+    opacity: 1;
 `;
 
 export const PhotoAndLoginBox = styled.div`

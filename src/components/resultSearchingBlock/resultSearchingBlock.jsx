@@ -17,16 +17,15 @@ export const ResultSearchingBlock = () => {
         setIsLoading(store.getState().isLoading.status);
     });
 
-    if (isLoading) {
-        return <img src="./loader.gif" alt="loader" className="loader" />;
-    } else {
-        return (
-            <S.Block>
+    return (
+        <div>
+            <S.Loader src="./loader.gif" alt="loader" isLoading={isLoading} />
+            <S.Block isLoading={isLoading}>
                 <SortButtonsBlock count={payload.total_count} />
                 {payload.items.map((item) => {
                     return <UserOnSearch user={item} key={item.id} />;
                 })}
             </S.Block>
-        );
-    }
+        </div>
+    );
 };

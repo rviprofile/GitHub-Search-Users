@@ -18,12 +18,12 @@ export const SearchButton = ({ login }) => {
     const [currentPage, setCurrentPage] = useState(1);
     // Состояние с сортировкой
     const [currentSort, setCurrentSort] = useState();
-    // При каждом обновлении store, обновляем локальное состояние со страницей поиска
+    // При каждом обновлении store, обновляем локальное состояние со страницей поиска или сортировкой
     store.subscribe(() => {
         setCurrentPage(store.getState().currentPageAndSort.currentPage);
         setCurrentSort(store.getState().currentPageAndSort.sort);
     });
-    // Если значение со страницей поиска изменилось, обращаемся к API используя логин
+    // Если значение со страницей поиска или сортировки изменились, обращаемся к API используя логин
     useEffect(() => {
         // Обращение к API
         SearchByLogin(login);
