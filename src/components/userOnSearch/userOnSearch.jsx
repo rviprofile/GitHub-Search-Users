@@ -31,10 +31,10 @@ export const UserOnSearch = ({ user, isActive }) => {
                 </S.LoginAndLinkBlock>
                 {isActive ? (
                     <S.DescriptionBlock>
-                        <p>Публичных репозиториев: {user.public_repos}</p>
-                        <p>Подписчиков: {user.followers}</p>
-                        <p>Создан: {format(user.created_at, "dd.MM.yyyy")}</p>
-                        <p>Изменён: {format(user.updated_at, "dd.MM.yyyy")}</p>
+                        <p>Публичных репозиториев: <b>{user.public_repos}</b></p>
+                        <p>Подписчиков: <b>{user.followers}</b></p>
+                        <p>Создан: <b>{format(user.created_at, "dd.MM.yyyy")}</b></p>
+                        <p>Изменён: <b>{format(user.updated_at, "dd.MM.yyyy")}</b></p>
                     </S.DescriptionBlock>
                 ) : (
                     ''

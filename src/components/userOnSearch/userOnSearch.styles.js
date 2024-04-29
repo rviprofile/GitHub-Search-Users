@@ -21,6 +21,14 @@ export const UserContainer = styled.div`
         background-color: #c8d4e6;
         transition: all 100ms ease;
     }
+    @media (max-width: 1150px) {
+        height: ${(props) => (props.isactive ? '250px' : '50px')};
+    }
+    @media (max-width: 660px) {
+        flex-direction: ${(props) => (props.isactive ? 'column' : 'row')};
+        align-items: ${(props) => (props.isactive ? 'flex-start' : 'center')};
+        height: ${(props) => (props.isactive ? '450px' : '50px')};
+    }
 `;
 
 export const UserImg = styled.img`
@@ -36,11 +44,16 @@ export const TypeOfUserImg = styled.img`
 
 export const PhotoAndLoginBox = styled.div`
     display: flex;
-    flex-direction: 'row';
-    wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
     cursor: pointer;
+    @media (max-width: 660px) {
+        flex-direction: ${(props) => (props.isactive ? 'column' : 'row')};
+        align-items: ${(props) => (props.isactive ? 'flex-start' : 'center')};
+        gap: 7px;
+    }
 `;
 
 export const Link = styled.a`
@@ -68,5 +81,11 @@ export const LoginAndLinkBlock = styled.div`
 `;
 
 export const DescriptionBlock = styled.div`
-    font-size: 20px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    color: rgb(102, 102, 119);
+    margin-left: 20px;
 `;
