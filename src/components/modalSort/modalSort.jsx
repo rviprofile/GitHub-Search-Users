@@ -4,14 +4,23 @@ import { store } from '../../store/store';
 import { NewCurrentPage, newSort } from '../../store/actions/creators/creators';
 
 export const ModalSort = () => {
+    // Состояние активно ли окно с выбором сортировки
     const [isActive, setIsActive] = useState(false);
+
+    // Состояние с выбранной сортировкой
     const [currentSort, setCurentSort] = useState({ id: 0 });
 
+    // Функция после нажатия на одну из сортировок
     const hadleClickItem = (id) => {
+        // Список вариантов сортировки больше не виден
         setIsActive(false);
-        store.dispatch(NewCurrentPage(1))
+        // Актуальная страница в поиске теперь 1
+        store.dispatch(NewCurrentPage(1));
+        // По id мы понимаем на какую сортировку нажали и что нужно сделать
         switch (id) {
+            // Нажали на уже выбранную сортировку
             case currentSort.id: {
+                // Сокртировка отменяется
                 setCurentSort({ title: 'Умолчанию', id: 0 });
                 store.dispatch(newSort(undefined));
                 return;
@@ -41,6 +50,7 @@ export const ModalSort = () => {
             }
         }
     };
+
     return (
         <S.ModalSortBlock>
             Сортировать по:
@@ -51,28 +61,28 @@ export const ModalSort = () => {
                 {isActive ? (
                     <S.ModalList>
                         <S.ModalListItem
-                            id="1"
+                            key="1"
                             onClick={() => hadleClickItem(1)}
                             isChoose={currentSort.id === 1}
                         >
                             Репозиториям ↓
                         </S.ModalListItem>
                         <S.ModalListItem
-                            id="2"
+                            key="2"
                             onClick={() => hadleClickItem(2)}
                             isChoose={currentSort.id === 2}
                         >
                             Репозиториям ↑
                         </S.ModalListItem>
                         <S.ModalListItem
-                            id="3"
+                            key="3"
                             onClick={() => hadleClickItem(3)}
                             isChoose={currentSort.id === 3}
                         >
                             Подписчикам ↓
                         </S.ModalListItem>
                         <S.ModalListItem
-                            id="4"
+                            key="4"
                             onClick={() => hadleClickItem(4)}
                             isChoose={currentSort.id === 4}
                         >
