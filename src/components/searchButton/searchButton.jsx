@@ -27,6 +27,7 @@ export const SearchButton = ({ login }) => {
     useEffect(() => {
         // Обращение к API
         SearchByLogin(login);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage, currentSort]);
 
     return (
